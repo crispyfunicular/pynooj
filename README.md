@@ -19,10 +19,10 @@ pip install pynooj
 ### Basic Example
 
 ```python
-from pynooj import main
+from pynooj import read_dic
 
 # Parse a NooJ dictionary file
-entries = main.read_dic("path/to/dictionary.dic")
+entries = read_dic("path/to/dictionary.dic")
 
 # Each entry is a dictionary containing:
 # - "inflected form": the word form
