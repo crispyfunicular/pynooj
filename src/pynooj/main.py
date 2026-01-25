@@ -45,11 +45,11 @@ def read_dic(path):
             dic_line = {}
 
             # 1. Extract the inflected form (always the first element)
-            dic_line["inflected form"] = line_lst[0]
+            dic_line["inflected form"] = unescape(line_lst[0])
 
             # 2. Extract the lemma (if present, it is the second element in a 3-item line)
             if len(line_lst) > 2:
-                dic_line["lemma"] = line_lst[1]
+                dic_line["lemma"] = unescape(line_lst[1])
 
             # 3. Extract lexical specifications (always the last element)
             lexical_spec = line_lst[-1]
@@ -58,7 +58,7 @@ def read_dic(path):
             lexical_spec_lst = lexical_spec.split("+")
 
             # The grammatical category is always the first item before the first '+'
-            dic_line["category"] = lexical_spec_lst[0]
+            dic_line["category"] = unescape(lexical_spec_lst[0])
 
             # Initialize dictionary for morphological traits (attributes)
             dic_line["traits"] = {}
@@ -90,14 +90,16 @@ def unescape(txt: str):
     Returns:
         str: The clean string.
     """
-
     # List of special characters that NooJ escapes
     spec_char = ["\\", '"', " ", ",", "+", "-", "#"]
 
-    for i, character in enumerate(txt):
+    i = 0
+    while i < len(txt) - 1:
         # Check if current char is a backslash and next char is a special character
-        if character == "\\" and txt[i + 1] in spec_char:
-            txt = txt[:i] + txt[i + 1 :]
+        if txt[i] == "\\" and txt[i + 1] in spec_char:
+            txt = txt[:i] + txt[i + 1:]
+        else:
+            i += 1
 
     return txt
 

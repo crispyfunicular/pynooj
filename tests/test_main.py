@@ -80,5 +80,24 @@ class TestMain(unittest.TestCase):
 
         self.assertEqual(dic_erro, result)
 
+    def test_read_dic6(self):
+        path = "tests/dic6.dic"
+        result = main.read_dic(path)
+
+        dic_cognosco = [
+            {
+                "inflected form": "cognosco",
+                "lemma" : "cognoscere",
+                "category": "V",
+                "traits": {
+                    "Theme": "INF",
+                    "TRAD" : "apprendre à connaître;connaître"
+                },
+            }
+        ]
+
+        self.assertEqual(dic_cognosco, result)
+
+
 if __name__ == "__main__":
     unittest.main()

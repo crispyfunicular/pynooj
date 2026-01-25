@@ -1,6 +1,6 @@
 [project]
 name = "pynooj"
-version = "0.1.2"
+version = "0.1.4"
 description = "Python librairy for parsing NooJ's dictionary files"
 readme = "README.md"
 authors = [
