@@ -1,0 +1,22 @@
+# NooJ V7
+# Dictionary
+#
+# Language is: la
+#
+# Alphabetical order is not required.
+#
+# Use inflectional & derivational paradigms' description files (.nof), e.g.:
+# Special Command: #use paradigms.nof
+#
+# Special Features: +NW (non-word) +FXC (frozen expression component) +UNAMB (unambiguous lexical entry)
+#                   +FLX= (inflectional paradigm) +DRV= (derivational paradigm)
+#
+# Special Characters: '\' '"' ' ' ',' '+' '-' '#'
+#
+# This dictionary was automatically built from C:\Users\cam\Documents\NooJ\la\Lexical Analysis\lat_verbes.dic
+#
+#use latin_verbs.nof
+#
+amo,amare,V+Theme=INF+FLX=GP1_INF+VX=act+P=1+NB=sg+GP=1+TP=pres+MOD=ind
+amor,amare,V+Theme=INF+FLX=GP1_INF+VX=pas+P=1+NB=sg+GP=1+TP=pres+MOD=ind
+amas,amare,V+Theme=INF+FLX=GP1_INF+GP=1+VX=act+P=2+NB=sg+TP=pres+MOD=ind

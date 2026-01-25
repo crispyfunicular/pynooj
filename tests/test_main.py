@@ -62,6 +62,23 @@ class TestMain(unittest.TestCase):
 
         self.assertEqual(dic_amo2, result)
 
+    def test_read_dic5(self):
+        path = "tests/dic5.dic"
+        result = main.read_dic(path)
+
+        dic_erro = [
+            {
+                "inflected form": "erro",
+                "lemma" : "errare",
+                "category": "V",
+                "traits": {
+                    "Theme": "INF",
+                    "TRAD" : "errer;se tromper"
+                },
+            }
+        ]
+
+        self.assertEqual(dic_erro, result)
 
 if __name__ == "__main__":
     unittest.main()

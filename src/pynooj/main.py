@@ -8,8 +8,8 @@ def read_dic(path):
         A list of dictionaries (one for each line)
 
         example .dic:
-        amo,amare,V+Theme=INF+FLX=GP1_INF+GP=1
-        debebo,debere,V+Theme=INF+FLX=GP2_INF+GP=2
+        amo,amare,V+PRIM=o;as;are;aui;atum+Theme=INF+TRAD=aimer+FLX=GP1_INF+VX=act+P=1+NB=sg+GP=1+TP=pres+MOD=ind
+        debebuntur,debere,V+PRIM=eo;es;ere;bui;bitum+Theme=INF+TRAD=devoir+FLX=GP2_INF+GP=2+TP=fut+MOD=ind+VX=pas+P=3+NB=pl
 
         example return:
         [{
@@ -72,7 +72,7 @@ def read_dic(path):
                 trait_lst = trait.split("=")
                 key = trait_lst[0]
                 value = trait_lst[1]
-                dic_line["traits"][key] = value
+                dic_line["traits"][key] = unescape(value)
 
             lst.append(dic_line)
 
